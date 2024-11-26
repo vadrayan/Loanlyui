@@ -1,0 +1,37 @@
+// new-component.component.scss
+
+// Example styles for your new component
+.new-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+
+    h1 {
+        font-size: 2em;
+        color: #333;
+    }
+
+    p {
+        font-size: 1em;
+        color: #666;
+    }
+
+    .button {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #0056b3;
+        }
+    }
+}

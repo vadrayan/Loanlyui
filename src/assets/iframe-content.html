@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iframe Content</title>
+</head>
+<body>
+  <h1>Please enter Loan Amount</h1>
+  <input type="text" placeholder="Enter Loan Amount" />
+  <br/>
+  <h1>Please enter tenure</h1>
+  <input type="text" placeholder="Enter tenure" />
+  <br/>
+  <h1>Please enter Interest Rate</h1>
+  <input type="text" placeholder="Enter Interest Rate" />
+  <p></p>
+<button onclick="calculateEMI()">Calculate EMI</button>
+<p id="emiResult"></p>
+
+<script>
+  function calculateEMI() {
+    const loanAmount = parseFloat(document.querySelector('input[placeholder="Enter Loan Amount"]').value);
+    const tenure = parseFloat(document.querySelector('input[placeholder="Enter tenure"]').value);
+    const interestRate = parseFloat(document.querySelector('input[placeholder="Enter Interest Rate"]').value) / 100 / 12;
+
+    if (isNaN(loanAmount) || isNaN(tenure) || isNaN(interestRate)) {
+      document.getElementById('emiResult').innerText = 'Please enter valid numbers';
+      return;
+    }
+
+    const emi = (loanAmount * interestRate * Math.pow(1 + interestRate, tenure)) / (Math.pow(1 + interestRate, tenure) - 1);
+    document.getElementById('emiResult').innerText = `Your EMI is ${emi.toFixed(2)}`;
+  }
+</script>
+ </body>
+</html>
