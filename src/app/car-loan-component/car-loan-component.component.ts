@@ -35,5 +35,6 @@ export class CarLoanComponentComponent {
     const time = this.tenure * 12;
 
     this.emi = (principal * rate * Math.pow(1 + rate, time)) / (Math.pow(1 + rate, time) - 1);
+    this.emi = parseFloat(this.emi.toFixed(2));
   }
 }

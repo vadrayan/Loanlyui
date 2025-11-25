@@ -1,0 +1,52 @@
+<main>
+  <div class="scroll-container">
+    <div style="display: flex; align-items: center;">
+      <h1 style="margin-right: 20px;">Home Loan Amount in Rupees</h1>
+      <input type="number" [(ngModel)]="loanAmount" (input)="updateLoanAmount($event)" />
+    </div>
+    <div style="display: flex; float: right;">
+    <input style="display: flex; float:left;" type="range" min="0" max="100000000" step="100000" [(ngModel)]="loanAmount" (input)="updateLoanAmount($event)" />
+    <br/>
+    <span>Rs {{ loanAmount }}</span>
+    </div>
+    
+    <br/>
+    <div style="display: flex; align-items: center;">
+    <h1 style="margin-right: 55px; margin-left: 190px;">Tenure in years</h1>
+    <input type="number" [(ngModel)]="tenure" (input)="updateTenure($event)" />
+    </div>
+    <div style="display: flex; float: right;">
+    <input style="display: flex; float: right;" type="range" min="1" max="30" step="1" [(ngModel)]="tenure" (input)="updateTenure($event)"/>
+    <span>{{ tenure }} years</span>
+    </div>
+    
+    <br/>
+    <div style="display: flex; align-items: center;">
+    <h1 style="margin-right: 100px;">Home Loan Interest Rate</h1>
+    <input type="number" [(ngModel)]="interestRate" (input)="updateInterestRate($event)" />
+    </div>
+    <div>
+    <input style="display: flex; float: right;" type="range" min="0" max="20" step="0.1" [(ngModel)]="interestRate" (input)="updateInterestRate($event)"/>
+    <span style="display: inline; margin-left: 450px;">{{ interestRate }}%</span>
+    </div>
+    <br/>
+    <br/>
+    <button (click)="calculateEmi()">Calculate EMI</button>
+    </div>
+    <div *ngIf="showEarlyFinish">
+    <h2>EMI of your home loan per month: {{ emi }} </h2>
+  </div>
+  
+  <div *ngIf="showEarlyFinish">
+    <h2>Part Payment Calculator</h2>
+    <div style="display: flex; align-items: center;">
+    <h1 style="margin-right: 50px;" for="partPayment">Annual Part Payment Amount</h1>
+    <input type="number" id="partPayment" [(ngModel)]="partPayment" (input)="updatePartPayment($event)" />
+  </div>
+  <br/>
+    <button (click)="calculateEarlyFinish()">Calculate Early Finish</button>
+    <div *ngIf="earlyFinishYears">
+      <h3>You can finish your loan in {{ earlyFinishYears }} years with annual part payments of {{ partPayment }}</h3>
+    </div>
+  </div>
+</main>

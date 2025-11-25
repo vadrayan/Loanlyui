@@ -1,1 +1,92 @@
 /* You can add global styles to this file, and also import other style files */
+/* styles.css */
+
+/* General styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Container styling */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Heading styling */
+  h1 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Blockquote styling */
+  blockquote {
+    font-size: 1.2rem;
+    color: #555;
+    border-left: 5px solid #007bff;
+    padding-left: 15px;
+    margin: 20px 0;
+  }
+  
+  /* Button styling */
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Image styling */
+  .bank-logo {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  /* AdSense styling */
+  .adsbygoogle {
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  /* Content styling */
+  .content {
+    display: grid;
+    gap: 20px;
+  }
+
+  /* Buttons and components styling */
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+  }

@@ -1,9 +1,8 @@
-<p>car-loan-component works!</p>
 <main>
     <div class="scroll-container">
-        <h1>Please enter CarLoan Amount</h1>
+        <h1>Please enter CarLoan Amount in Rupees</h1>
         <input type="range" min="0" max="10000000" step="100000" [(ngModel)]="loanAmount" (input)="updateLoanAmount($event)"/>
-        <span>{{ loanAmount }}</span> 
+        <span>Rs {{ loanAmount }}</span> 
         <br/>
         <input type="number" [(ngModel)]="loanAmount" (input)="updateLoanAmount($event)" />
         <br/>
@@ -23,6 +22,6 @@
         <button (click)="calculateEmi()">Calculate EMI</button>
     </div>
     <div>
-        <h2>EMI Result: {{ emi }} </h2>
+        <h2>EMI of your car would be: {{ emi }} </h2>
         </div>
 </main>

@@ -8,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './personal-loan.component.html',
   styleUrl: './personal-loan.component.scss'
 })
-export class PersonalLoanComponent {
+export class PersonalLoanComponentComponent {
  loanAmount: number = 0;
   interestRate: number = 0;
 
@@ -35,5 +35,6 @@ export class PersonalLoanComponent {
     const time = this.tenure * 12;
 
     this.emi = (principal * rate * Math.pow(1 + rate, time)) / (Math.pow(1 + rate, time) - 1);
+    this.emi = parseFloat(this.emi.toFixed(2));
   }
 }
