@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  loanlyui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/vadrayan/loanlyui:latest
+    ports:
+      - "80:80"
+    restart: unless-stopped
