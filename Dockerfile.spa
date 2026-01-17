@@ -1,0 +1,17 @@
+# Build stage
+FROM node:18-alpine AS build
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --silent
+COPY . .
+RUN npm run build
+
+# Production stage (nginx)
+FROM nginx:stable-alpine
+RUN rm -rf /usr/share/nginx/html/*
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Adjust path if your build output is dist/<project> or build
+COPY --from=build /app/dist /usr/share/nginx/html
+# If your build output is /app/build, change to: /app/build
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
